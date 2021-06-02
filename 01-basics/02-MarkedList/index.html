@@ -12,14 +12,9 @@
 <body>
 
 <div id="app">
-  <input type="text" />
-  <ul>
-    <li>Email</li>
-    <li class="marked">Email</li>
-    <li class="marked">Email</li>
-    <li>Email</li>
-    <li>Email</li>
-    <li>...</li>
+  <input type="text" v-model="emailModel" />
+  <ul v-for="email in emails" :key="email.id">
+    <li :class="isEmailMarked(email) ? 'marked' : ''">{{ email }}</li>
   </ul>
 </div>
 
