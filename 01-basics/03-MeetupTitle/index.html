@@ -6,7 +6,12 @@
 </head>
 <body>
 
-<!-- Решение -->
+<div id="app">
+  <label v-for="n in 5">
+    <input type="radio" name="meetupId" :value="n" v-model="selectedItem"/>{{ n }}
+  </label>
+  <div>{{ title }}</div>
+</div>
 
 <script type="module" src="script.js"></script>
 </body>
