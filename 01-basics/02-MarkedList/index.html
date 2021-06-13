@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>MarkedList</title>
+  <style>
+    .marked {
+      color: #efc14e;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <input type="text" v-model="emailModel" />
+  <ul v-for="email in emails" :key="email.id">
+    <li :class="{ marked: email.marked }">{{ email.value }}</li>
+  </ul>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
