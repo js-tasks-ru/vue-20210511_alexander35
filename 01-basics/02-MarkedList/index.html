@@ -13,7 +13,7 @@
 
 <div id="app">
   <input type="text" v-model="emailModel" />
-  <ul v-for="email in emails" :key="email.id">
+  <ul v-for="email in getMarkedEmails" :key="email.id">
     <li :class="{ marked: email.marked }">{{ email.value }}</li>
   </ul>
 </div>
