@@ -9,18 +9,10 @@ export default {
     },
   },
 
-  // Компонент должен иметь модель
-  data() {
-    return {
-      counter: 0,
-    };
-  },
-
   // Шаблон лучше держать максимально простым, а логику выносить в методы
   methods: {
     increment() {
-      this.counter = this.count;
-      this.$emit('increment', ++this.counter);
+      this.$emit('increment', ++this.count);
     },
   },
 
