@@ -8,5 +8,5 @@ export default {
     },
   },
 
-  template: '<p class="meetup-description" v-html="description"></p>',
+  template: '<p class="meetup-description">{{ description }}</p>',
 };
