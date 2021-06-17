@@ -19,6 +19,6 @@ export default {
 
 	template: `
     <div class="meetup-cover" :style="coverStyle">
-        <h1 class="meetup-cover__title" v-html="title"></h1>
+        <h1 class="meetup-cover__title">{{ title }}</h1>
     </div>`,
 };
