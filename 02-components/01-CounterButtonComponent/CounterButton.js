@@ -12,7 +12,7 @@ export default {
   // Шаблон лучше держать максимально простым, а логику выносить в методы
   methods: {
     increment() {
-      this.$emit('increment', ++this.count);
+      this.$emit('increment', this.count + 1);
     },
   },
 
