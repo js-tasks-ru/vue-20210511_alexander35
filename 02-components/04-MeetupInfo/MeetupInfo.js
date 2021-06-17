@@ -1,19 +1,50 @@
 export default {
-  name: 'MeetupInfo',
+	name: 'MeetupInfo',
 
-  template: `
+	props: {
+		organizer: {
+			type: String,
+			required: true,
+		},
+
+		place: {
+			type: String,
+			required: true,
+		},
+
+		date: {
+			type: Date,
+			required: true,
+		},
+	},
+
+	computed: {
+		textDate() {
+			return this.date.toLocaleDateString('en-EN', {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric'
+			});
+		},
+
+		datetime() {
+			return this.date.toISOString().split('T')[0];
+		},
+	},
+
+	template: `
     <ul class="info-list">
       <li>
         <img class="icon info-list__icon" alt="icon" src="/assets/icons/icon-user.svg" />
-        Организатор
+        {{ organizer }}
       </li>
       <li>
         <img class="icon info-list__icon" alt="icon" src="/assets/icons/icon-map.svg" />
-        Место
+        {{ place }}
       </li>
       <li>
         <img class="icon info-list__icon" alt="icon" src="/assets/icons/icon-cal-lg.svg" />
-        <time datetime="2020-01-01">1 янв. 2020</time>
+        <time :datetime="datetime">{{ textDate }}</time>
       </li>
     </ul>`,
 };
