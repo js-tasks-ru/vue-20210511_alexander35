@@ -23,7 +23,7 @@ export default {
 
 	computed: {
 		imageLink() {
-			return getImageUrlByImageId(this.meetup.imageId);
+			return this.meetup.imageId ? getImageUrlByImageId(this.meetup.imageId) : undefined;
 		},
 
 		meetupDate() {
